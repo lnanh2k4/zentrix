@@ -1,0 +1,33 @@
+html,
+body,
+#root {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: none;
+}
+
+@keyframes subtleGlow {
+    0% {
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    }
+
+    50% {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    }
+
+    100% {
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    }
+}
+
+.animate-subtleGlow {
+    animation: subtleGlow 2s infinite ease-in-out;
+}
+
+:root {
+    --color-profit: hsl(var(--chart-3));
+    --color-exportRevenue: hsl(var(--chart-2));
+    --color-importCost: hsl(var(--chart-1));
+}

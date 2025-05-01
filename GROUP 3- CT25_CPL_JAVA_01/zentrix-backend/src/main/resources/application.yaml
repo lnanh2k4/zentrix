@@ -1,0 +1,103 @@
+spring:
+    application:
+        name: Zentrix
+    servlet:
+        encoding:
+            charset: UTF-8
+            enabled: true
+            force: true
+        multipart:
+            max-file-size: 20MB
+            max-request-size: 20MB
+    # security:
+    #     enabled: false
+    datasource:
+        url: jdbc:postgresql://localhost:5432/zentrix?useUnicode=true&characterEncoding=UTF-8
+        username: postgres
+        password: P_Gre$!P@ssw0rd!
+    jpa:
+        database-platform: org.hibernate.dialect.PostgreSQLDialect
+        hibernate:
+            ddl-auto: update
+        show-sql: false
+    mail:
+        host: smtp.gmail.com
+        port: 587
+        username: zentrix.system@gmail.com
+        password: iejjabgljblhwkyl
+        properties:
+            mail:
+                debug: true
+                smtp:
+                    auth: true
+                    starttls:
+                        enable: true   
+                        required: true
+                    connectiontimeout: 5000
+                    timeout: 5000
+                    writetimeout: 5000
+    security:
+        oauth2:
+            client:
+                registration:
+                    google:
+                        client-id: 753911456221-h2pdnvqol3h4tf6c40h62at9v3j6v3mi.apps.googleusercontent.com
+                        client-secret: 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
+                        scope: profile, email
+                provider:
+                    google:
+                        user-info-uri: https://www.googleapis.com/oauth2/v3/userinfo
+
+server:
+  port: 6789
+ 
+
+springdoc:
+    swagger-ui:
+        path: /swagger-ui.html
+        enabled: true
+    api-docs:
+        path: /v3/api-docs
+        enabled: true
+
+open:
+    api:
+        title: "Zentrix"
+        version: "v1.0.0"
+        description: "Zentrix application"
+        serverUrl: "http://localhost:6789"
+        serverName: "Zentrix"
+
+momo:
+    dev:
+        endpoint: https://test-payment.momo.vn/v2/gateway/api
+        access-key: mTCKt9W3eU1m39TW
+        partner-code: MOMOLRJZ20181206
+        secret-key: SetA5RDnLHvt51AULf51DyauxUo3kDU6
+   
+
+aio_v2:
+    create-url: /create
+    query-url: /query
+    refund-url: /refund
+    confirm-url: /confirm
+    token-pay-url: /tokenization/pay
+    token-bind-url: /tokenization/bind
+    token-inquiry-url: /tokenization/cbQuery
+    token-delete-url: /tokenization/delete
+
+pagination:
+    page: 0
+    size: 10
+
+jwt:
+    secret: XWrXGYrOhgirnnouxzynrabqHHEPuL4sdXe4GO1daPtXiL16eAvsC24dGLP0xA9r
+    expiration: 86400000
+
+cors:
+    allowed-origins: "http://localhost:5173"
+    allowed-methods: "*"
+    allowed-headers: "*"
+    allowed-credentials: true
+
+# debug: true
